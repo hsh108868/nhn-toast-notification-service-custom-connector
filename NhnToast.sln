@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NhnToast.Sms.Tests", "test\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NhnToast.Sms.Verification.Tests", "test\NhnToast.Sms.Verification.Tests\NhnToast.Sms.Verification.Tests.csproj", "{B2DBBAAB-6035-4C65-8DDE-48344DC2ABA1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NhnToast.Ping", "src\nt-ping\NhnToast.Ping.csproj", "{1DB52725-21AA-410B-89C1-6B88406390B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{B2DBBAAB-6035-4C65-8DDE-48344DC2ABA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2DBBAAB-6035-4C65-8DDE-48344DC2ABA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2DBBAAB-6035-4C65-8DDE-48344DC2ABA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DB52725-21AA-410B-89C1-6B88406390B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB52725-21AA-410B-89C1-6B88406390B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB52725-21AA-410B-89C1-6B88406390B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB52725-21AA-410B-89C1-6B88406390B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{3BDD78AB-E9EB-4F03-9202-38BED1D92E38} = {4F7AC02D-C734-4F9F-A5AC-A963AC093EAC}
 		{2BC8AC67-B823-4777-98AB-ABE6F4890DA5} = {4F7AC02D-C734-4F9F-A5AC-A963AC093EAC}
 		{B2DBBAAB-6035-4C65-8DDE-48344DC2ABA1} = {4F7AC02D-C734-4F9F-A5AC-A963AC093EAC}
+		{1DB52725-21AA-410B-89C1-6B88406390B9} = {EB42C374-242B-4020-AC8D-BD053F2716C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C62FCB9E-F98F-4EFD-BD2B-F4109D0F4418}
