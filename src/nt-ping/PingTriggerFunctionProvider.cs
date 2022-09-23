@@ -41,11 +41,6 @@ namespace NhnToast.Ping
         {
             var bindings = new Dictionary<string, HttpBindingMetadata>();
 
-            if (this._settings.HideDocument)
-            {
-                return bindings;
-            }
-
             var renderFunctionDocument = new HttpBindingMetadata()
             {
                 Methods = new List<string>() { HttpMethods.Get },
