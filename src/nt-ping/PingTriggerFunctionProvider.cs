@@ -1,14 +1,11 @@
 using Microsoft.Azure.WebJobs.Script.Description;
-using System;
-using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Configurations;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Abstractions;
+using System.Reflection;
+
 
 
 namespace NhnToast.Ping
@@ -28,7 +25,7 @@ namespace NhnToast.Ping
             this._bindings = this.SetupOpenApiHttpBindings();
         }
 
-        private const string RenderFunctionDocumentKey = nameof(PingTriggerFunctions);
+        private const string RenderPingDocumentKey = nameof(PingTriggerFunctions);
 
         public ImmutableDictionary<string, ImmutableArray<string>> FunctionErrors { get; } = new Dictionary<string, ImmutableArray<string>>().ToImmutableDictionary();
 
@@ -41,18 +38,42 @@ namespace NhnToast.Ping
         {
             var bindings = new Dictionary<string, HttpBindingMetadata>();
 
-            var renderFunctionDocument = new HttpBindingMetadata()
+            var renderPingDocument = new HttpBindingMetadata()
             {
                 Methods = new List<string>() { HttpMethods.Get },
-                Route = "nt-sms/{version}.{extension}",
+                Route = "ping/{version}.{extension}",
                 AuthLevel = this._settings.AuthLevel?.Document ?? AuthorizationLevel.Anonymous,
             };
 
-            bindings.Add(RenderFunctionDocumentKey, renderFunctionDocument);
+            bindings.Add(RenderPingDocumentKey, renderPingDocument);
 
             return bindings;
 
         }
 
+        private List<FunctionMetadata> GetFunctionMetadataList()
+        {
+            var list = new List<FunctionMetadata>();
+            list.AddRange(new[]
+            {
+                this.GetFunctionMetadata(RenderPingDocumentKey)
+            });
+
+            return list;
+        }
+
+        private FunctionMetadata GetFunctionMetadata(string functionName)
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var functionMetadata = new FunctionMetadata()
+            {
+                Name = functionName,
+                FunctionDirectory = null,
+                ScriptFile = $"assembly:{assembly.FullName}",
+                EntryPoint = $"{assembly.GetName().Name}.{typeof(PingTriggerFunctions).Name}.{functionName}",
+                Language = "DotNetAssembly"
+            };
+            return functionMetadata;
+        }
     }
 }
