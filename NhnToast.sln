@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NhnToast.Tests.Common", "te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NhnToast.Common.Tests", "test\NhnToast.Common.Tests\NhnToast.Common.Tests.csproj", "{FA24D37C-A6FA-4DCB-9645-EB2F366972B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NhnToast.Ping.Tests", "test\NhnToast.Ping.Tests\NhnToast.Ping.Tests.csproj", "{3BDD78AB-E9EB-4F03-9202-38BED1D92E38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NhnToast.Ping.Tests", "test\NhnToast.Ping.Tests\NhnToast.Ping.Tests.csproj", "{3BDD78AB-E9EB-4F03-9202-38BED1D92E38}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NhnToast.Sms.Tests", "test\NhnToast.Sms.Tests\NhnToast.Sms.Tests.csproj", "{2BC8AC67-B823-4777-98AB-ABE6F4890DA5}"
 EndProject

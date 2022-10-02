@@ -6,11 +6,8 @@ using Microsoft.Azure.WebJobs.Extensions.OpenApi.Configurations;
 using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Abstractions;
 using System.Reflection;
 
-
-
 namespace NhnToast.Ping
 {
-
     public class PingTriggerFunctionProvider : IFunctionProvider
     {
         private readonly OpenApiSettings _settings;
